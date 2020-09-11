@@ -1,5 +1,5 @@
 # pihole-dot-doh
-Official pihole docker with both DoT (DNS over TLS) and DoH (DNS over HTTPS) clients. Don't browse the web securely and still send your DNS queries in plain text!
+Official pihole docker with both DoT (DNS over TLS) and DoH (DNS over HTTPS) clients. Don't browse the web securely and yet still send your DNS queries in plain text!
 
 Built for both Raspberry Pi and AMD64.
 
