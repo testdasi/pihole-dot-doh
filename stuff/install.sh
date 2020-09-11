@@ -3,14 +3,16 @@
 # install stubby config
 cd /tmp \
     && mkdir -p /config/stubby \
-    && cp -n ./stubby.yml /config/stubby/ \
-    && rm -f ./stubby.yml
+    && cp -n ./stubby.yml /config/stubby/
+#\
+#    && rm -f ./stubby.yml
 
 # install cloudflared config
 cd /tmp \
     && mkdir -p /config/cloudflared \
-    && cp -n ./cloudflared.yml /config/cloudflared/ \
-    && rm -f ./cloudflared.yml
+    && cp -n ./cloudflared.yml /config/cloudflared/
+#\
+#    && rm -f ./cloudflared.yml
 
 if [ "$DOT" = "yes" ]
 then
