@@ -5,7 +5,7 @@ VOLUME ["/config"]
 ARG DOH=yes
 ARG DOT=yes
 
-ADD stuff /tmp
+ADD stuff /temp
 
 RUN /bin/bash /tmp/install.sh
 #\
