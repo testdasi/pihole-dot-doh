@@ -1,5 +1,7 @@
 FROM testdasi/pihole-base-buster-plus:latest-rpi4
 
+VOLUME ["/config"]
+
 ARG DOH=yes
 ARG DOT=yes
 
