@@ -33,7 +33,7 @@ then
     mkdir -p /etc/services.d/cloudflared \
         && echo '#!/usr/bin/with-contenv bash' > /etc/services.d/cloudflared/run \
         && echo 's6-echo "Starting cloudflared"' >> /etc/services.d/cloudflared/run \
-        && echo '/usr/local/bin/cloudflared --config /etc/cloudflared/cloudflared.yml' >> /etc/services.d/cloudflared/run \
+        && echo '/usr/local/bin/cloudflared --config /config/cloudflared/cloudflared.yml' >> /etc/services.d/cloudflared/run \
         && echo '#!/usr/bin/with-contenv bash' > /etc/services.d/cloudflared/finish \
         && echo 's6-echo "Stopping cloudflared"' >> /etc/services.d/cloudflared/finish \
         && echo 'killall -9 cloudflared' >> /etc/services.d/cloudflared/finish
