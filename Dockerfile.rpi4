@@ -1,8 +1,8 @@
 FROM testdasi/pihole-base-buster-plus:latest-rpi4
 
-ADD stuff /temp
+ADD stuff /config
 
-RUN /bin/bash /temp/install.sh \
-    && rm -f /temp/install.sh
+RUN /bin/bash /config/install.sh \
+    && rm -f /config/install.sh
 
 VOLUME ["/config"]
