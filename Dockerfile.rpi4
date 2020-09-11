@@ -7,5 +7,6 @@ ARG DOT=yes
 
 ADD stuff /tmp
 
-RUN /bin/bash /tmp/install.sh \
-    && rm -f /tmp/install.sh
+RUN /bin/bash /tmp/install.sh
+#\
+#    && rm -f /tmp/install.sh
