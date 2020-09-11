@@ -2,24 +2,24 @@
 Official pihole docker both DoT (DNS over TLS) and DoH (DNS over HTTPS). Built for both Raspberry Pi and AMD64.
 
 ## PULL THE RIGHT TAG!
-* For linux/amd64 (e.g. Unraid) -> pull testdasi/pihole-with-doh:latest-amd64
-* For linux/arm/v7 (e.g. Raspberry Pi4) -> pull testdasi/pihole-with-doh:latest-rpi4 
-* testdasi/pihole-with-doh:latest = testdasi/pihole-with-doh:latest-amd64
+* For linux/amd64 (e.g. Unraid) -> pull testdasi/pihole-dot-doh:latest-amd64
+* For linux/arm/v7 (e.g. Raspberry Pi4) -> pull testdasi/pihole-dot-doh:latest-rpi4 
+* testdasi/pihole-dot-doh:latest = testdasi/pihole-dot-doh:latest-amd64
 * Note that due to compiling quirks, latest-rpi4 tag shows OS/ARCH as linux/amd64 but it is actually linux/arm/v7
 
 ## Usage:
 For docker parameters, refer to [official pihole docker readme](https://github.com/pi-hole/pi-hole). Below is an Unraid example.
 
     docker run -d \
-        --name='pihole-with-doh' \
+        --name='pihole-dot-doh' \
         --cap-add=NET_ADMIN \
         --restart=unless-stopped \
         --net='bridge' \
         -e TZ="Europe/London" \
         -e HOST_OS="Unraid" \
-        -v '/mnt/user/appdata/pihole-doh/pihole/':'/etc/pihole/':'rw' \
-        -v '/mnt/user/appdata/pihole-doh/dnsmasq.d/':'/etc/dnsmasq.d/':'rw' \
-        -v '/mnt/user/appdata/pihole-doh/config/':'/config':'rw' \
+        -v '/mnt/user/appdata/pihole-dot-doh/pihole/':'/etc/pihole/':'rw' \
+        -v '/mnt/user/appdata/pihole-dot-doh/dnsmasq.d/':'/etc/dnsmasq.d/':'rw' \
+        -v '/mnt/user/appdata/pihole-dot-doh/config/':'/config':'rw' \
         -e 'DNS1'='127.1.1.1#5153' \
         -e 'DNS2'='127.2.2.2#5253' \
         -e 'TZ'='Europe/London' \
