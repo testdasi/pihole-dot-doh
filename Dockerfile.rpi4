@@ -3,8 +3,6 @@ FROM testdasi/pihole-base-buster-plus:latest-rpi4
 ARG DOH=yes
 ARG DOT=yes
 
-VOLUME ["/config"]
-
 ADD stuff /tmp
 
 RUN /bin/bash /tmp/install.sh \
