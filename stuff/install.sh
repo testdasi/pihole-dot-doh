@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # install stubby config
-cd /tmp \
+cd /temp \
     && mkdir -p /config/stubby \
     && cp -n ./stubby.yml /config/stubby/
 #\
 #    && rm -f ./stubby.yml
 
 # install cloudflared config
-cd /tmp \
+cd /temp \
     && mkdir -p /config/cloudflared \
     && cp -n ./cloudflared.yml /config/cloudflared/
 #\
