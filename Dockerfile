@@ -1,9 +1,8 @@
 FROM testdasi/pihole-base-buster-plus:latest-amd64
 
-ARG DOH=yes
-ARG DOT=yes
+ADD stuff /temp
 
-ADD stuff /tmp
+RUN /bin/bash /temp/install.sh \
+    && rm -f /temp/install.sh
 
-RUN /bin/bash /tmp/install.sh \
-    && rm -f /tmp/install.sh
+VOLUME ["/config"]
