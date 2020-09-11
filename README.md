@@ -1,5 +1,7 @@
 # pihole-dot-doh
-Official pihole docker both DoT (DNS over TLS) and DoH (DNS over HTTPS). Built for both Raspberry Pi and AMD64.
+Official pihole docker with both DoT (DNS over TLS) and DoH (DNS over HTTPS) clients. Don't browse the web securely and still send your DNS queries in plain text!
+
+Built for both Raspberry Pi and AMD64.
 
 ## PULL THE RIGHT TAG!
 * For linux/amd64 (e.g. Unraid) -> pull testdasi/pihole-dot-doh:latest-amd64
