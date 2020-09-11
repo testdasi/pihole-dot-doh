@@ -1,0 +1,6 @@
+proxy-dns: true
+proxy-dns-port: 5153
+proxy-dns-address: 127.1.1.1
+proxy-dns-upstream:
+ - https://1.1.1.1/dns-query
+ - https://1.0.0.1/dns-query
