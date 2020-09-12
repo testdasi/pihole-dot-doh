@@ -43,10 +43,6 @@ round_robin_upstreams: 1
 # connection for every query.
 idle_timeout: 10000
 
-# Specify the timeout on getting a response to an individual request
-# (default 5s)
-timeout: 1
-
 ################################ LISTEN ADDRESS ################################
 listen_addresses:
   - 127.2.2.2@5253
