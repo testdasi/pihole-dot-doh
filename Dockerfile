@@ -12,4 +12,4 @@ RUN /bin/bash /temp/install.sh \
 
 VOLUME ["/config"]
 
-RUN echo "$(date "+%d.%m.%Y %T") Built from ${FRM} with tag ${TAG}"
+RUN echo "$(date "+%d.%m.%Y %T") Built from ${FRM} with tag ${TAG}" >> /build_date.info
