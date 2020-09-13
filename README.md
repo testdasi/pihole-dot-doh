@@ -4,10 +4,9 @@ Official pihole docker with both DoT (DNS over TLS) and DoH (DNS over HTTPS) cli
 Built for both Raspberry Pi and AMD64.
 
 ## PULL THE RIGHT TAG!
-* For linux/amd64 (e.g. Unraid) -> pull testdasi/pihole-dot-doh:latest-amd64
-* For linux/arm/v7 (e.g. Raspberry Pi4) -> pull testdasi/pihole-dot-doh:latest-rpi4 
-* testdasi/pihole-dot-doh:latest = testdasi/pihole-dot-doh:latest-amd64
-* Note that due to compiling quirks, latest-rpi4 tag shows OS/ARCH as linux/amd64 but it is actually linux/arm/v7
+* For linux/amd64 (e.g. Unraid) -> pull testdasi/pihole-dot-doh:stable-amd64
+* For linux/arm/v7 (e.g. Raspberry Pi4) -> pull testdasi/pihole-dot-doh:stable-rpi4 
+* Note that due to compiling quirks, \*-rpi4 tag shows OS/ARCH as linux/amd64 but it is actually linux/arm/v7
 
 ## Usage:
 For docker parameters, refer to [official pihole docker readme](https://github.com/pi-hole/pi-hole). Below is an Unraid example.
@@ -36,7 +35,7 @@ For docker parameters, refer to [official pihole docker readme](https://github.c
         -p '10067:67/udp' \
         -p '10080:80/tcp' \
         -p '10443:443/tcp' \
-        'testdasi/pihole-dot-doh:latest-amd64'
+        'testdasi/pihole-dot-doh:stable-amd64'
 
 ### Notes:
 * Remember to set pihole env DNS1 and DNS2 to use the DoH / DoT IP below. If either DNS1 or DNS2 is NOT set, Pihole will use a non-encrypted service.
