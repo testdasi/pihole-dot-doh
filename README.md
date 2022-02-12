@@ -40,8 +40,8 @@ For docker parameters, refer to [official pihole docker readme](https://github.c
 * In addition to the 2 official paths, you can also map container /config to expose configuration yml files for cloudflared (cloudflared.yml) and stubby (stubby.yml).
   * Edit these files to add / remove services as you wish. The flexibility is yours.
 * Credits:
-  * Pihole (buster) base image is the official [pihole/pihole:master-buster](https://hub.docker.com/r/pihole/pihole/tags?page=1&name=master-buster)
-  * Cloudflared client was obtained from [official site](https://developers.cloudflare.com/argo-tunnel/downloads)
+  * Pihole base image is the official [pihole/pihole:latest](https://hub.docker.com/r/pihole/pihole/tags?page=1&name=latest)
+  * Cloudflared client was obtained from [official site](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation#linux)
   * Stubby is a standard debian buster package
 * I code for fun and my personal uses; hence, these niche functionalties that nobody asks for. ;)
 * If you like my work, [a donation to my burger fund](https://paypal.me/mersenne) is very much appreciated.
