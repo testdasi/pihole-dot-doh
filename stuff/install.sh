@@ -1,23 +1,11 @@
 #!/bin/bash
 
-# Creating pihole-dot-doh service
-mkdir -p /etc/services.d/pihole-dot-doh
-
-# run file
-echo '#!/usr/bin/with-contenv bash' > /etc/services.d/pihole-dot-doh/run
-# Copy config file if not exists
-echo 'cp -n /temp/stubby.yml /config/' >> /etc/services.d/pihole-dot-doh/run
-echo 'cp -n /temp/cloudflared.yml /config/' >> /etc/services.d/pihole-dot-doh/run
-# run stubby in background
-echo 's6-echo "Starting stubby"' >> /etc/services.d/pihole-dot-doh/run
-echo 'stubby -g -C /config/stubby.yml' >> /etc/services.d/pihole-dot-doh/run
-# run cloudflared in foreground
-echo 's6-echo "Starting cloudflared"' >> /etc/services.d/pihole-dot-doh/run
-echo '/usr/local/bin/cloudflared --config /config/cloudflared.yml' >> /etc/services.d/pihole-dot-doh/run
-
-# finish file
-echo '#!/usr/bin/with-contenv bash' > /etc/services.d/pihole-dot-doh/finish
-echo 's6-echo "Stopping stubby"' >> /etc/services.d/pihole-dot-doh/finish
-echo 'killall -9 stubby' >> /etc/services.d/pihole-dot-doh/finish
-echo 's6-echo "Stopping cloudflared"' >> /etc/services.d/pihole-dot-doh/finish
-echo 'killall -9 cloudflared' >> /etc/services.d/pihole-dot-doh/finish
+## Piggy-backing on Pihole service ##
+# Insert run lines below the call capsh comment
+sed -i "/^# Call capsh with the detected capabilities/a start-stop-daemon --start --background --name cloudflared --chdir \/config --exec \/usr\/local\/bin\/cloudflared -- --config \/config\/cloudflared.yml" /etc/s6-overlay/s6-rc.d/pihole-FTL/run
+sed -i "/^# Call capsh with the detected capabilities/a stubby -g -C \/config\/stubby.yml" /etc/s6-overlay/s6-rc.d/pihole-FTL/run
+sed -i "/^# Call capsh with the detected capabilities/a cp -n \/temp\/stubby.yml \/config/" /etc/s6-overlay/s6-rc.d/pihole-FTL/run
+sed -i "/^# Call capsh with the detected capabilities/a cp -n \/temp\/cloudflared.yml \/config/" /etc/s6-overlay/s6-rc.d/pihole-FTL/run
+# Insert finish lines above kill pihole
+sed -i "/^killall -15 pihole-FTL/i killall -15 cloudflared" /etc/s6-overlay/s6-rc.d/pihole-FTL/finish
+sed -i "/^killall -15 pihole-FTL/i killall -15 stubby" /etc/s6-overlay/s6-rc.d/pihole-FTL/finish
