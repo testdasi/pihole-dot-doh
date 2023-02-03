@@ -4,7 +4,7 @@ Official pihole docker with both DoT (DNS over TLS) and DoH (DNS over HTTPS) cli
 Multi-arch image built for both Raspberry Pi (arm64, arm32/v7) and amd64.
 
 ## Usage:
-For docker parameters, refer to [official pihole docker readme](https://github.com/pi-hole/pi-hole). Below is an Unraid example.
+For docker parameters, refer to [official pihole docker readme](https://github.com/pi-hole/docker-pi-hole). Below is an Unraid example.
 
     docker run -d \
         --name='pihole-dot-doh' \
