@@ -1,3 +1,6 @@
+# Deprecated
+Due to recent release of Pihole 6, its docker image was rewritten AND switched to Alpine. I unfortunately don't have to fix this docker since much of the code was written specifically to work with Pihole 5 docker.
+
 # pihole-dot-doh
 Official pihole docker with both DoT (DNS over TLS) and DoH (DNS over HTTPS) clients. Don't browse the web securely and yet still send your DNS queries in plain text!
 
